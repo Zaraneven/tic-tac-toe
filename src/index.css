@@ -1,13 +1,153 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #444;
+  color: white;
+  margin: 20px;
+  font: 32px "Century Gothic", Futura, sans-serif;
+  padding-top: 120px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.square {
+  background-color: #444;
+  color: white;
+  border: 1px solid #999;
+  padding: 0;
+  font-size: 84px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.square:focus {
+  outline: none;
+  background-color: #222;
+}
+
+.status {
+  margin: 20px;
+  font-size: 24px;
+}
+
+.modal {
+  width: 300px;
+  background: lightslategray;
+  border: 5px solid #ccc;
+  justify-content: center;
+  visibility: visible;
+  position: absolute;
+  left: 40.5%;
+  top: 20%;
+}
+
+.mdl {
+  width: 500px;
+  background: white;
+  border: 5px solid #ccc;
+  justify-content: center;
+  visibility: visible;
+  position: absolute;
+  left: 34%;
+  top: 20%;
+}
+
+.inp {
+  width: 200px;
+  height: 30px;
+  margin-left: 50px;
+}
+
+.msg {
+  margin-left: 50px;
+}
+
+.button {
+  background-color: blue;
+  font-size: 20px;
+  margin-left: 1px;
+  margin-bottom: 20px;
+  color: white;
+  border-color: white;
+}
+
+.hist {
+  float: left;
+}
+
+.history {
+  display: inline;
+  font-size: 18px;
+  margin-left: 5px;
+  
+}
+
+.btn {
+  display: inline;
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  border-color: white;
+}
+
+.btn1 {
+  display: inline;
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+  border-color: white;
+  margin-left: 105px;
+}
+
+.nplayer {
+  font: 30px "Century Gothic", Futura, sans-serif;
+  margin-left: 50px;
+}
+
+.startgame {
+  font: 30px "Century Gothic", Futura, sans-serif ;
+  background-color: crimson;
+  color: white;
+  border: none;
+}
+
+header {
+  position: fixed;
+    text-align: center;
+    width: 100%;
+    background-color: #444;
+    color: white;
+    z-index: 999;
+    top: 0;
+    height: 74px;
+    padding: 30px;
+    border-bottom: solid black 1px;
+}
+
+.left {
+  float: left;
+  margin-left: 130px;
+}
+
+.img {
+  max-width: 15px;
+  max-height: 15px;
+  float: left;
+}
+
+.right {
+  float: right;
+  margin-right: 100px;
+  display: flex;
 }
