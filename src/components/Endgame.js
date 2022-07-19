@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import Login from "./Login";
 
 const Endgame = ({ winner, mod, restart }) => {
   const [open, setOpen] = useState(false);

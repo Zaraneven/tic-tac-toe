@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 const History = ({ winner, ply1, ply2, mod }) => {
-  
-
   useEffect(() => {
     if (winner) {
       var history = {
@@ -15,15 +13,15 @@ const History = ({ winner, ply1, ply2, mod }) => {
         won: mod,
       };
 
-      var historyOfGames = JSON.parse(sessionStorage.getItem("allEntries"));
+      var historyOfGames = JSON.parse(localStorage.getItem("allEntries"));
       if (historyOfGames == null) historyOfGames = [];
-      sessionStorage.setItem("history", JSON.stringify(history));
+      localStorage.setItem("history", JSON.stringify(history));
       historyOfGames.push(history);
-      sessionStorage.setItem("allEntries", JSON.stringify(historyOfGames));
+      localStorage.setItem("allEntries", JSON.stringify(historyOfGames));
     }
   }, [winner]);
 
-  var retrievedHistory = sessionStorage.getItem("allEntries");
+  var retrievedHistory = localStorage.getItem("allEntries");
 
   if (retrievedHistory != null) {
     const objResul = JSON.parse(retrievedHistory);

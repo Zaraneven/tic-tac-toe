@@ -8,7 +8,6 @@ const Square = (props) => {
   );
 };
 const Board = ({ status, squares, handleClickEvent }) => {
-  
   const renSquare = (i) => {
     return (
       <Square value={squares[i]} onClickEvent={() => handleClickEvent(i)} />
@@ -17,7 +16,7 @@ const Board = ({ status, squares, handleClickEvent }) => {
   return (
     <div>
       <div className="status">{status}</div>
-      <div  className="board-row">
+      <div className="board-row">
         {renSquare(0)}
         {renSquare(1)}
         {renSquare(2)}
@@ -53,9 +52,13 @@ export function calculateWinner(squares) {
 
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
-    } else if (!squares.includes(null)) {
-      return "draw";
     }
   }
+
+  if (!squares.includes(null)) {
+    return "It is a Draw ";
+  }
+
+  return null;
 }
 export default Board;

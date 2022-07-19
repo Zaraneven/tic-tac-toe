@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 
 function Login({ restartCounter }) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(true);
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
 
   function openModal() {
-    sessionStorage.clear();
+    localStorage.clear();
     setModalIsOpen(true);
   }
 
   const handle = () => {
-    sessionStorage.setItem("player1", player1);
-    sessionStorage.setItem("player2", player2);
+    localStorage.setItem("player1", player1);
+    localStorage.setItem("player2", player2);
     setModalIsOpen(false);
   };
 
