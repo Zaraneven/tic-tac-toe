@@ -152,6 +152,12 @@ header {
   display: flex;
 }
 
+.validation {
+  font-size: 15px;
+  margin-left: 55px;
+  color: black;
+}
+
 
 
 @media screen and (max-width: 700px){

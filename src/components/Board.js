@@ -7,7 +7,7 @@ const Square = (props) => {
     </button>
   );
 };
-const Board = ({ status, squares, handleClickEvent }) => {
+const Board = ({ status, squares, handleClickEvent, msg }) => {
   const renSquare = (i) => {
     return (
       <Square value={squares[i]} onClickEvent={() => handleClickEvent(i)} />

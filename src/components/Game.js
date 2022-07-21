@@ -13,23 +13,25 @@ const Game = () => {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
   const [countC, setCountC] = useState(0);
-  
+  const [msg, setMsg] = useState("");
+
   const handleClickEvent = (i) => {
     const newSquares = [...squares];
     const winnerDeclared = Boolean(calculateWinner(newSquares));
-    const squareFilled = Boolean(newSquares[i])
-    if(squareFilled === true){
-      return alert('Choose unoccupied cell')
+    const squareFilled = Boolean(newSquares[i]);
+    if (squareFilled) {
+      setMsg("bb");
+    } else if (!squareFilled) {
+      setMsg("");
     }
     if (winnerDeclared || squareFilled) {
       return;
-    } 
+    }
     newSquares[i] = xIsNext ? "X" : "O";
     setSquares(newSquares);
     setXIsNext(!xIsNext);
   };
 
- 
   let ply1 = localStorage.getItem("player1");
   let ply2 = localStorage.getItem("player2");
 
@@ -42,6 +44,8 @@ const Game = () => {
     status = "Winner: " + ply2;
   } else if (winner) {
     status = "It is a Draw ";
+  } else if (msg) {
+    status = "Choose unoccupied cell";
   } else {
     status = "Next player: " + (xIsNext ? ply1 : ply2);
   }
@@ -90,12 +94,14 @@ const Game = () => {
         ply1={ply1}
         ply2={ply2}
         status={status}
+        msg={msg}
         handleClickEvent={handleClickEvent}
         winner={winner}
         squares={squares}
       />
+
       <div className="show">
-      <Login winner={winner} restartCounter={restartCounter}  />
+        <Login winner={winner} restartCounter={restartCounter} />
       </div>
       <Endgame winner={winner} mod={mod} restart={restart} />
       <History winner={winner} ply1={ply1} ply2={ply2} mod={mod} />
