@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-function Login({ restartCounter }) {
+function Login({ restartCounter, restart }) {
   const [modalIsOpen, setModalIsOpen] = useState(true);
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
@@ -16,7 +16,6 @@ function Login({ restartCounter }) {
     localStorage.setItem("player1", player1);
     localStorage.setItem("player2", player2);
     setModalIsOpen(false);
-
     if (player1 === "" || player2 === "") {
       setName("Please enter players name");
       setModalIsOpen(true);
@@ -53,13 +52,12 @@ function Login({ restartCounter }) {
           <button
             type="button"
             className="btn1"
-            onClick={() => (handle(), restartCounter())}
+            onClick={() => (handle(), restartCounter(), restart())}
           >
             Submit
           </button>
         </form>
       </Modal>
-
       <br></br>
       <button type="button" className="button" onClick={openModal}>
         Start new game
